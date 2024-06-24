@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Feedback Recommendation System</title>
+</head>
+<body>
+    <h2>AI Feedback Recommendation System</h2>
+    <form method="post" action="/">
+        <fieldset>
+            <legend>Student Information</legend>
+            <label for="student_name">Soal:</label>
+            <input type="text" id="student_name" name="student_name" required><br>
+            
+            <label for="score">Pilihan benar:</label>
+            <input type="text" id="pb" name="pb" required><br>
+
+            <label for="score">Pilihan salah:</label>
+            <input type="text" id="ps" name="ps" required><br>
+        </fieldset>
+        
+        <input type="submit" value="Get Recommended Feedback">
+    </form>
+    {% if feedback_options %}
+        <!-- <h3>Recommended Feedback Options:</h3>
+        {% for feedback in feedback_options %}
+            <li>
+                {{ feedback.feedback }}
+            </li>
+        {% endfor %} -->
+        <h3>Recommended Feedback Options:</h3>
+        <p>{{ feedback_options }}</p>
+    {% endif %}
+</body>
+</html>
